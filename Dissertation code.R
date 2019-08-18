@@ -230,9 +230,9 @@ inc_MB_ClearfLo_2010_12$incFe <- inc_MB_ClearfLo_2010_12$FE.x - inc_MB_ClearfLo_
 inc_MB_ClearfLo_2010_12$incZn <- inc_MB_ClearfLo_2010_12$ZN.x - inc_MB_ClearfLo_2010_12$ZN.y
 inc_MB_ClearfLo_2010_12       <- select(inc_MB_ClearfLo_2010_12, c(1,8,9,10))
 inc_MB_ClearfLo_2010_12       <- inc_MB_ClearfLo_2010_12 %>% 
-                                                        group_by(month = format(as.Date(date),'%m-%Y')) %>%
-                                                        summarise_each(funs(if(length(na.omit(.))>=15)
-                                                        mean(.,na.rm=TRUE) else NA_real_), 2:4)
+  group_by(month = format(as.Date(date),'%m-%Y')) %>%
+  summarise_each(funs(if(length(na.omit(.))>=15)
+    mean(.,na.rm=TRUE) else NA_real_), 2:4)
 inc_MB_ClearfLo_2010_12       <- inc_MB_ClearfLo_2010_12 %>% drop_na()
 inc_MB_ClearfLo_2010_12       <- as.data.frame(inc_MB_ClearfLo_2010_12)
 
@@ -275,27 +275,27 @@ inc_MB_ClearfLo_2010_12              <- subset(inc_MB_ClearfLo_2010_12, date > a
 
 
 A3    <- ggplot() +
-          geom_line(data = inc_MB_ClearfLo_2010_12, aes(x = date, y = incCu, color = "blue")) +
-          geom_line(data = inc_MB_Defra_2010_12, aes(x = date, y = incCu, color = "red")) +
-          xlab('Date') +
-          ylab('incCu in ng/m3')+ 
-          scale_color_discrete("Campaign", labels = c("ClearfLo","Defra")) + theme(legend.title = element_text(color = "black", size = 16, face = "bold")) + theme(plot.title = element_text(size = 20, face = "bold")) + theme(text=element_text(size=16,  family="serif"))
+  geom_line(data = inc_MB_ClearfLo_2010_12, aes(x = date, y = incCu, color = "blue")) +
+  geom_line(data = inc_MB_Defra_2010_12, aes(x = date, y = incCu, color = "red")) +
+  xlab('Date') +
+  ylab('incCu in ng/m3')+ 
+  scale_color_discrete("Campaign", labels = c("ClearfLo","Defra")) + theme(legend.title = element_text(color = "black", size = 16, face = "bold")) + theme(plot.title = element_text(size = 20, face = "bold")) + theme(text=element_text(size=16,  family="serif"))
 A3
 
 A4    <- ggplot() +
-          geom_line(data = inc_MB_ClearfLo_2010_12, aes(x = date, y = incFe, color = "blue")) +
-          geom_line(data = inc_MB_Defra_2010_12, aes(x = date, y = incFe, color = "red")) +
-          xlab('Date') +
-          ylab('incFe in ng/m3')+ 
-          scale_color_discrete("Campaign", labels = c("ClearfLo","Defra")) + theme(legend.title = element_text(color = "black", size = 16, face = "bold")) + theme(plot.title = element_text(size = 20, face = "bold")) + theme(text=element_text(size=16,  family="serif"))
+  geom_line(data = inc_MB_ClearfLo_2010_12, aes(x = date, y = incFe, color = "blue")) +
+  geom_line(data = inc_MB_Defra_2010_12, aes(x = date, y = incFe, color = "red")) +
+  xlab('Date') +
+  ylab('incFe in ng/m3')+ 
+  scale_color_discrete("Campaign", labels = c("ClearfLo","Defra")) + theme(legend.title = element_text(color = "black", size = 16, face = "bold")) + theme(plot.title = element_text(size = 20, face = "bold")) + theme(text=element_text(size=16,  family="serif"))
 A4
 
 A5    <- ggplot() +
-          geom_line(data = inc_MB_ClearfLo_2010_12, aes(x = date, y = incZn, color = "blue")) +
-          geom_line(data = inc_MB_Defra_2010_12, aes(x = date, y = incZn, color = "red")) +
-          xlab('Date') +
-          ylab('incZn in ng/m3')+ 
-          scale_color_discrete("Campaign", labels = c("ClearfLo","Defra")) + theme(legend.title = element_text(color = "black", size = 16, face = "bold")) + theme(plot.title = element_text(size = 20, face = "bold")) + theme(text=element_text(size=16,  family="serif"))
+  geom_line(data = inc_MB_ClearfLo_2010_12, aes(x = date, y = incZn, color = "blue")) +
+  geom_line(data = inc_MB_Defra_2010_12, aes(x = date, y = incZn, color = "red")) +
+  xlab('Date') +
+  ylab('incZn in ng/m3')+ 
+  scale_color_discrete("Campaign", labels = c("ClearfLo","Defra")) + theme(legend.title = element_text(color = "black", size = 16, face = "bold")) + theme(plot.title = element_text(size = 20, face = "bold")) + theme(text=element_text(size=16,  family="serif"))
 A5
 
 
@@ -308,12 +308,12 @@ write.csv(MB_required_dataset, file = "MB_ClearfLo_Defra_inc_tracers.csv", row.n
 
 options(expss.digits = 2)
 T1 <- MB_required_dataset %>% 
-      tab_cells(incCu.x, incCu.y, incFe.x, incFe.y, incZn.x, incZn.y) %>% 
-      tab_cols(total(label = "Traffic incremental tracer values")) %>%
-      tab_stat_fun(Mean = w_mean, Max = w_max, Min = w_min, Median = w_median, SD = w_sd, N = w_n, method = list) %>% 
-      tab_pivot() %>% 
-      set_caption("Summary statistics of ClearfLo and Defra campaigns from 2010-12")
-      htmlTable(T1)
+  tab_cells(incCu.x, incCu.y, incFe.x, incFe.y, incZn.x, incZn.y) %>% 
+  tab_cols(total(label = "Traffic incremental tracer values")) %>%
+  tab_stat_fun(Mean = w_mean, Max = w_max, Min = w_min, Median = w_median, SD = w_sd, N = w_n, method = list) %>% 
+  tab_pivot() %>% 
+  set_caption("Summary statistics of ClearfLo and Defra campaigns from 2010-12")
+htmlTable(T1)
 
 MB_required_dataset_Cu  <- select(MB_required_dataset, -c(date,incFe.x, incFe.y, incZn.x, incZn.y))
 colnames(MB_required_dataset_Cu) <- c("ClearfLo","Defra")
@@ -321,7 +321,7 @@ colnames(MB_required_dataset_Cu) <- c("ClearfLo","Defra")
 i <- c(1:2)    
 MB_required_dataset_Cu[ , i] <- apply(MB_required_dataset_Cu[ , i], 2, function(x) as.numeric(as.character(x)))
 sapply(MB_required_dataset_Cu, class)    
-  
+
 A6 <- ggplot(stack(MB_required_dataset_Cu), aes(x= ind, y= values, fill = ind)) + labs(y = expression(paste("Brake wear tracer (Cu) in ng ", m^-3)), x = "Roadside increment") + stat_boxplot(geom="errorbar", width = 0.25) + geom_boxplot() + scale_fill_discrete(guide = guide_legend(title ="Campaign")) + theme(legend.title = element_text(color = "black", size = 16, face = "bold")) + theme(plot.title = element_text(size = 20, face = "bold")) + theme(text=element_text(size=16,  family="serif"))
 A6 <- ggplotly(A6)
 A6
@@ -366,33 +366,33 @@ wilcox.test(Resuspension ~ Campaign, mu = 0, alt = "two.sided", correct =TRUE, p
 #Deming charts 
 
 
-x <- MB_required_dataset_Cu$ClearfLo
-y <- MB_required_dataset_Cu$Defra
+x <- MB_required_dataset_Cu$Defra
+y <- MB_required_dataset_Cu$ClearfLo
 
 b1 <- mcreg(x,y,method.reg = "Deming", mref.name = "Defra", mtest.name = "ClearfLo", na.rm = TRUE)
 
 plot(b1, Legend = TRUE, main =  "Deming regression of Cu from ClearfLo over Defra", Points.pch = 19, ci.area = TRUE , identity = FALSE, Grid = FALSE, Sub ="") 
 
-MCResult.plot(b1, identity = TRUE, ci.area.col = grey(0.9), Legend = TRUE, legend.place = "topleft", add.grid = FALSE,ci.border = TRUE, points.pch = 20, main = "Cu in ng/m3", add.cor = FALSE, family="serif", sub = "")
+MCResult.plot(b1, identity = TRUE, ci.area.col = grey(0.9), Legend = TRUE, legend.place = "bottomright", add.grid = FALSE,ci.border = TRUE, points.pch = 20, main = "Cu in ng/m3", add.cor = FALSE, family="serif", sub = "")
 
 
-x <- MB_required_dataset_Fe$ClearfLo
-y <- MB_required_dataset_Fe$Defra
+x <- MB_required_dataset_Fe$Defra
+y <- MB_required_dataset_Fe$ClearfLo
 
 r1 <- mcreg(x,y,method.reg = "Deming", mref.name = "Defra", mtest.name = "ClearfLo", na.rm = TRUE)
 
 plot(r1, Legend = TRUE, main =  "Deming regression of Fe from ClearfLo over Defra", Points.pch = 19, ci.area = FALSE , identity = FALSE, Grid = FALSE, Sub ="") 
 
-MCResult.plot(r1, identity = TRUE, ci.area.col = grey(0.9), Legend = TRUE, legend.place = "bottomleft", add.grid = FALSE,ci.border = TRUE, points.pch = 20, main = "Fe in ng/m3", add.cor = FALSE, family="serif", sub = "")
+MCResult.plot(r1, identity = TRUE, ci.area.col = grey(0.9), Legend = TRUE, legend.place = "topright", add.grid = FALSE,ci.border = TRUE, points.pch = 20, main = "Fe in ng/m3", add.cor = FALSE, family="serif", sub = "")
 
-x <- MB_required_dataset_Zn$ClearfLo
-y <- MB_required_dataset_Zn$Defra
+x <- MB_required_dataset_Zn$Defra
+y <- MB_required_dataset_Zn$ClearfLo
 
 t1 <- mcreg(x,y,method.reg = "Deming", mref.name = "Defra", mtest.name = "ClearfLo", na.rm = TRUE)
 
 plot(t1, Legend = TRUE, main =  "Deming regression of Zn from ClearfLo over Defra", Points.pch = 19, ci.area = TRUE , identity = FALSE, Grid = FALSE, Sub ="") 
 
-MCResult.plot(b1, identity = TRUE, ci.area.col = grey(0.9), Legend = TRUE, legend.place = "topleft", add.grid = FALSE,ci.border = TRUE, points.pch = 20, main = "Zn in ng/m3", add.cor = FALSE, family="serif", sub = "")
+MCResult.plot(t1, identity = TRUE, ci.area.col = grey(0.9), Legend = TRUE, legend.place = "bottomright", add.grid = FALSE,ci.border = TRUE, points.pch = 20, main = "Zn in ng/m3", add.cor = FALSE, family="serif", sub = "")
 
 
 ## Next section of Methodology 
@@ -456,15 +456,15 @@ write.csv(SwanMary, file = "SwanMary_concentrations.csv", row.names = F)
 
 options(epxpss.digits = 2)
 MST1 <- SwanMary %>% 
-          tab_cells(Brake_wear_MB, Brake_wear_SM, Resuspension_MB, Resuspension_SM, Tyre_wear_MB, Tyre_wear_SM, NE_PM_MB, NE_PM_SM) %>% 
-          tab_cols(total(label = "Non-exhaust PM concentrations")) %>%
-          tab_stat_fun(Mean = w_mean, Max = w_max, Min = w_min, Median = w_median, SD = w_sd, N = w_n, method = list) %>% 
-          tab_pivot() %>% 
-          set_caption("Summary statistics of Marylebone and Swansea from 2011-18")
-        htmlTable(MST1)
+  tab_cells(Brake_wear_MB, Brake_wear_SM, Resuspension_MB, Resuspension_SM, Tyre_wear_MB, Tyre_wear_SM, NE_PM_MB, NE_PM_SM) %>% 
+  tab_cols(total(label = "Non-exhaust PM concentrations")) %>%
+  tab_stat_fun(Mean = w_mean, Max = w_max, Min = w_min, Median = w_median, SD = w_sd, N = w_n, method = list) %>% 
+  tab_pivot() %>% 
+  set_caption("Summary statistics of Marylebone and Swansea from 2011-18")
+htmlTable(MST1)
 
 ##Mann whitney and box plots##
-        
+
 SwanMary_Cu           <- SwanMary[,c(1,2,6)]
 SwanMary_Fe           <- SwanMary[,c(1,4,7)]
 SwanMary_Zn           <- SwanMary[,c(1,3,8)]
@@ -579,12 +579,12 @@ df <- AADF_MB_plot
 
 
 lm_eqn <- function(df){
-     m <- lm(y ~ x, df);
-    eq <- substitute(italic(y) == a + b %.% italic(x)*","~~italic(r)^2~"="~r2,
-        list(a = format(unname(coef(m)[1]), digits = 2),
-             b = format(unname(coef(m)[2]), digits = 2),
-             r2 = format(summary(m)$r.squared, digits = 2)))
-    as.character(as.expression(eq));
+  m <- lm(y ~ x, df);
+  eq <- substitute(italic(y) == a + b %.% italic(x)*","~~italic(r)^2~"="~r2,
+                   list(a = format(unname(coef(m)[1]), digits = 2),
+                        b = format(unname(coef(m)[2]), digits = 2),
+                        r2 = format(summary(m)$r.squared, digits = 2)))
+  as.character(as.expression(eq));
 }
 
 p <- ggplot(data = df, aes(x=x, y=y))+
