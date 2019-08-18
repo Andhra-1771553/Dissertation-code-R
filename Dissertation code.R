@@ -14,7 +14,7 @@ library(tidyr)
 library(expss)
 library(mcr)
 
-##Original statistical analysis##
+##Original statistical analyses##
 
 ## Data collection -> Importing PM10 with met data, tracer elements in PM10 fraction data from ClearfLo (MB and NK) and Defra(MB and WM) + [urban traffic aadf and hourly traffic counts of MB]
 # Import PM10 with met data of my1, wm0 from KCL database as it comes with surface measurements and we just need PM10 - https://davidcarslaw.github.io/openair/reference/importKCL.html
