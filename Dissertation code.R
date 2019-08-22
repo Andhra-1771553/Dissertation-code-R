@@ -696,3 +696,21 @@ SM_inc_NE_polar        <- inner_join(SM_inc_2011_2019_NExhaust, Met_data_NE_SM, 
 polarPlot(MB_inc_NE_polar, pollutant = "Non_exhaust_PM")
 
 polarPlot(SM_inc_NE_polar, pollutant = "Non_exhaust_PM")
+
+##Supplementary code four##
+
+##Post-analysis of background sites datasets of ClearfLo and Defra from 2011-12 using Mann-Whitney test## 
+
+background_dataset     <- inner_join(NK_ClearfLo_2010_12_req, WM_Defra_2010_12, by = "date")
+
+write.csv(background_dataset,file = "background sites analysis.csv", row.names = F)
+
+background_brake      <- read.csv("C:/Users/andhr/OneDrive/Documents/background sites brake.csv", header = TRUE)
+background_tyre       <- read.csv("C:/Users/andhr/OneDrive/Documents/background sites tyre.csv", header = TRUE)
+background_dust       <- read.csv("C:/Users/andhr/OneDrive/Documents/background sites dust.csv", header = TRUE)
+
+wilcox.test(Brakewear ~ Campaign, mu = 0, alt = "two.sided", correct =TRUE, paired = FALSE, conf.int = TRUE, data = background_brake)
+wilcox.test(Tyrewear ~ Campaign, mu = 0, alt = "two.sided", correct =TRUE, paired = FALSE, conf.int = TRUE, data = background_tyre)
+wilcox.test(Resuspension ~ Campaign, mu = 0, alt = "two.sided", correct =TRUE, paired = FALSE, conf.int = TRUE, data = background_dust)
+
+##Except for Tyre wear tracaer (Zn) there are no significant differences in NK and WM sites implying both backgrounds are similar##
