@@ -142,7 +142,7 @@ timePlot(MB_ClearfLo_2010_12_req, pollutant = "FE", name.pol = "Resuspension tra
 
 MB_ClearfLo_2010_12_partition  <- MB_ClearfLo_2010_12_req %>% select(CU,ZN,FE)
 
-A <- ggplot(stack(MB_ClearfLo_2010_12_partition), aes(x= ind, y= values, fill = ind)) + xlab("MB 2010-12 ClearfLo") + ylab("Brake wear (Cu), Tyre wear (Zn) and Resuspension (Fe) tracers in ng/m3") + stat_boxplot(geom="errorbar", width = 0.25) + geom_boxplot() + labs(fill ="Non-exhaust tracers") + theme(legend.title = element_text(color = "black", size = 16, face = "bold")) + labs(title = 'MB ClearfLo') + theme(plot.title = element_text(size = 20, face = "bold")) + theme(text=element_text(size=16,  family="serif"))
+A <- ggplot(stack(MB_ClearfLo_2010_12_partition), aes(x= ind, y= values, fill = ind)) + xlab("MB 2010-12 ClearfLo") + ylab("Brake wear (Cu), Tyre wear (Zn) and Resuspension (Fe) tracers in ng/m3") + stat_boxplot(geom="errorbar", width = 0.25) + geom_boxplot() + labs(fill ="Non-exhaust tracers") + theme(legend.title = element_text(color = "black", size = 16, face = "bold")) + labs(title = 'MB ClearfLo') + theme(plot.title = element_text(size = 20, face = "bold")) + theme(text=element_text(size=16,  family="Palatino"))
 A <- ggplotly(A)
 A
 
@@ -155,7 +155,7 @@ timePlot(NK_ClearfLo_2010_12_req, pollutant = "FE", name.pol = "Resuspension tra
 
 NK_ClearfLo_2010_12_partition  <- NK_ClearfLo_2010_12_req %>% select(CU,ZN,FE)
 
-B <- ggplot(stack(NK_ClearfLo_2010_12_partition), aes(x= ind, y= values, fill = ind)) + xlab("NK 2010-12 ClearfLo") + ylab("Brake wear (Cu), Tyre wear (Zn) and Resuspension (Fe) tracers in ng/m3") + stat_boxplot(geom="errorbar", width = 0.25)  + geom_boxplot() + labs(fill ="Non-exhaust tracers") + theme(legend.title = element_text(color = "black", size = 16, face = "bold")) + labs(title = 'NK ClearfLo') + theme(plot.title = element_text(size = 20, face = "bold")) + theme(text=element_text(size=16,  family="serif"))
+B <- ggplot(stack(NK_ClearfLo_2010_12_partition), aes(x= ind, y= values, fill = ind)) + xlab("NK 2010-12 ClearfLo") + ylab("Brake wear (Cu), Tyre wear (Zn) and Resuspension (Fe) tracers in ng/m3") + stat_boxplot(geom="errorbar", width = 0.25)  + geom_boxplot() + labs(fill ="Non-exhaust tracers") + theme(legend.title = element_text(color = "black", size = 16, face = "bold")) + labs(title = 'NK ClearfLo') + theme(plot.title = element_text(size = 20, face = "bold")) + theme(text=element_text(size=16,  family="Palatino"))
 B <- ggplotly(B)
 B
 
@@ -169,7 +169,7 @@ timePlot(MB_Cu_Zn_Fe_2010_2019, pollutant = "Fe", name.pol = "Resuspension trace
 
 MB_Cu_Zn_Fe_2010_2019_partition  <- MB_Cu_Zn_Fe_2010_2019 %>% select(Cu,Zn,Fe)
 
-C <- ggplot(stack(MB_Cu_Zn_Fe_2010_2019_partition), aes(x= ind, y= values, fill = ind)) + xlab("MB 2010-19 Defra") + ylab("Brake wear (Cu), Tyre wear (ZN) and Resuspension (FE) tracers in ng/m3") + stat_boxplot(geom="errorbar", width = 0.25) + geom_boxplot() + labs(fill ="Non-exhaust tracers") + theme(legend.title = element_text(color = "black", size = 16, face = "bold")) + labs(title = 'MB Defra') + theme(plot.title = element_text(size = 20, face = "bold")) + theme(text=element_text(size=16,  family="serif"))
+C <- ggplot(stack(MB_Cu_Zn_Fe_2010_2019_partition), aes(x= ind, y= values, fill = ind)) + xlab("MB 2010-19 Defra") + ylab("Brake wear (Cu), Tyre wear (ZN) and Resuspension (FE) tracers in ng/m3") + stat_boxplot(geom="errorbar", width = 0.25) + geom_boxplot() + labs(fill ="Non-exhaust tracers") + theme(legend.title = element_text(color = "black", size = 16, face = "bold")) + labs(title = 'MB Defra') + theme(plot.title = element_text(size = 20, face = "bold")) + theme(text=element_text(size=16,  family="Palatino"))
 C <- ggplotly(C)
 C
 
@@ -181,7 +181,7 @@ timePlot(WM_Cu_Zn_Fe_2010_2019, pollutant = "Fe", name.pol = "Resuspension trace
 
 WM_Cu_Zn_Fe_2010_2019_partition  <- WM_Cu_Zn_Fe_2010_2019 %>% select(Cu,Zn,Fe)
 
-D <- ggplot(stack(WM_Cu_Zn_Fe_2010_2019_partition), aes(x= ind, y= values, fill = ind)) + xlab("WM 2010-19 Defra") + ylab("Brake wear (Cu), Tyre wear (ZN) and Resuspension (FE) tracers in ng/m3") + stat_boxplot(geom="errorbar", width = 0.25) + geom_boxplot() + labs(fill ="Non-exhaust tracers") + theme(legend.title = element_text(color = "black", size = 16, face = "bold")) + labs(title = 'WM Defra') + theme(plot.title = element_text(size = 20, face = "bold")) + theme(text=element_text(size=16,  family="serif"))
+D <- ggplot(stack(WM_Cu_Zn_Fe_2010_2019_partition), aes(x= ind, y= values, fill = ind)) + xlab("WM 2010-19 Defra") + ylab("Brake wear (Cu), Tyre wear (ZN) and Resuspension (FE) tracers in ng/m3") + stat_boxplot(geom="errorbar", width = 0.25) + geom_boxplot() + labs(fill ="Non-exhaust tracers") + theme(legend.title = element_text(color = "black", size = 16, face = "bold")) + labs(title = 'WM Defra') + theme(plot.title = element_text(size = 20, face = "bold")) + theme(text=element_text(size=16,  family="Palatino"))
 D <- ggplotly(D)
 D
 
@@ -197,11 +197,11 @@ TfL_Traffic_data_partition_East  <- TfL_Traffic_data_East %>% select(Total.Volum
 TfL_Traffic_data_partition_West  <- TfL_Traffic_data_West %>% select(Total.Volume)
 
 
-TC <- ggplot(stack(TfL_Traffic_data_partition_East), aes(x= ind, y= values, fill = ind)) + xlab("Traffic data - East") + ylab("Total volume") + stat_boxplot(geom="errorbar", width = 0.25) + geom_boxplot() + labs(fill ="Traffic") + theme(legend.title = element_text(color = "black", size = 16, face = "bold")) + labs(title = 'East direction traffic of MB') + theme(plot.title = element_text(size = 20, face = "bold")) + theme(text=element_text(size=16,  family="serif"))
+TC <- ggplot(stack(TfL_Traffic_data_partition_East), aes(x= ind, y= values, fill = ind)) + xlab("Traffic data - East") + ylab("Total volume") + stat_boxplot(geom="errorbar", width = 0.25) + geom_boxplot() + labs(fill ="Traffic") + theme(legend.title = element_text(color = "black", size = 16, face = "bold")) + labs(title = 'East direction traffic of MB') + theme(plot.title = element_text(size = 20, face = "bold")) + theme(text=element_text(size=16,  family="Palatino"))
 TC <- ggplotly(TC)
 TC
 
-TD <- ggplot(stack(TfL_Traffic_data_partition_West), aes(x= ind, y= values, fill = ind)) + xlab("Traffic data - West") + ylab("Total volume") + stat_boxplot(geom="errorbar", width = 0.25) + geom_boxplot() + labs(fill ="Traffic") + theme(legend.title = element_text(color = "black", size = 16, face = "bold")) + labs(title = 'West direction traffic of MB') + theme(plot.title = element_text(size = 20, face = "bold")) + theme(text=element_text(size=16,  family="serif"))
+TD <- ggplot(stack(TfL_Traffic_data_partition_West), aes(x= ind, y= values, fill = ind)) + xlab("Traffic data - West") + ylab("Total volume") + stat_boxplot(geom="errorbar", width = 0.25) + geom_boxplot() + labs(fill ="Traffic") + theme(legend.title = element_text(color = "black", size = 16, face = "bold")) + labs(title = 'West direction traffic of MB') + theme(plot.title = element_text(size = 20, face = "bold")) + theme(text=element_text(size=16,  family="Palatino"))
 TD <- ggplotly(TD)
 TD
 
@@ -245,7 +245,7 @@ inc_MB_ClearfLo_2010_12       <- read.csv("C:/Users/andhr/OneDrive/Documents/inc
 inc_MB_ClearfLo_2010_12$month <- as.POSIXct(strptime(inc_MB_ClearfLo_2010_12$month, format = "%d/%m/%Y"), tz = "GMT")
 names(inc_MB_ClearfLo_2010_12)[names(inc_MB_ClearfLo_2010_12)=="month"] <- "date"
 
-A1 <- ggplot(stack(inc_MB_ClearfLo_2010_12), aes(x= ind, y= values, fill = ind)) + xlab("incMB tracers") + ylab("ng/m3") + stat_boxplot(geom="errorbar", width = 0.25) + geom_boxplot() + labs(fill ="Tracer metals") + theme(legend.title = element_text(color = "black", size = 16, face = "bold")) + labs(title = 'CleafLo traffic increment at MB') + theme(plot.title = element_text(size = 20, face = "bold")) + theme(text=element_text(size=16,  family="serif"))
+A1 <- ggplot(stack(inc_MB_ClearfLo_2010_12), aes(x= ind, y= values, fill = ind)) + xlab("incMB tracers") + ylab("ng/m3") + stat_boxplot(geom="errorbar", width = 0.25) + geom_boxplot() + labs(fill ="Tracer metals") + theme(legend.title = element_text(color = "black", size = 16, face = "bold")) + labs(title = 'CleafLo traffic increment at MB') + theme(plot.title = element_text(size = 20, face = "bold")) + theme(text=element_text(size=16,  family="Palatino"))
 A1
 
 # incMetals analysis of Defra in 2010-12
@@ -268,7 +268,7 @@ write.csv(inc_MB_Defra_2010_12,file = "inc_MB_Defra.csv", row.names = F)
 inc_MB_Defra_2010_12          <- read.csv("C:/Users/andhr/OneDrive/Documents/inc_MB_Defra_processed.csv", stringsAsFactors = FALSE)
 inc_MB_Defra_2010_12$date     <- as.POSIXct(strptime(inc_MB_Defra_2010_12$date, format = "%d/%m/%Y"), tz = "GMT")
 
-A2    <- ggplot(stack(inc_MB_Defra_2010_12), aes(x= ind, y= values, fill = ind)) + xlab("incMB tracers") + ylab("ng/m3") + stat_boxplot(geom="errorbar", width = 0.25) + geom_boxplot() + labs(fill ="Tracer metals") + theme(legend.title = element_text(color = "black", size = 16, face = "bold")) + labs(title = 'Defra traffic increment at MB') + theme(plot.title = element_text(size = 20, face = "bold")) + theme(text=element_text(size=16,  family="serif"))
+A2    <- ggplot(stack(inc_MB_Defra_2010_12), aes(x= ind, y= values, fill = ind)) + xlab("incMB tracers") + ylab("ng/m3") + stat_boxplot(geom="errorbar", width = 0.25) + geom_boxplot() + labs(fill ="Tracer metals") + theme(legend.title = element_text(color = "black", size = 16, face = "bold")) + labs(title = 'Defra traffic increment at MB') + theme(plot.title = element_text(size = 20, face = "bold")) + theme(text=element_text(size=16,  family="Palatino"))
 A2
 
 inc_MB_ClearfLo_2010_12              <- subset(inc_MB_ClearfLo_2010_12, date > as.Date("2011-03-31"))
@@ -279,7 +279,7 @@ A3    <- ggplot() +
   geom_line(data = inc_MB_Defra_2010_12, aes(x = date, y = incCu, color = "red")) +
   xlab('Date') +
   ylab('incCu in ng/m3')+ 
-  scale_color_discrete("Campaign", labels = c("ClearfLo","Defra")) + theme(legend.title = element_text(color = "black", size = 16, face = "bold")) + theme(plot.title = element_text(size = 20, face = "bold")) + theme(text=element_text(size=16,  family="serif"))
+  scale_color_discrete("Campaign", labels = c("ClearfLo","Defra")) + theme(legend.title = element_text(color = "black", size = 16, face = "bold")) + theme(plot.title = element_text(size = 20, face = "bold")) + theme(text=element_text(size=16,  family="Palatino"))
 A3
 
 A4    <- ggplot() +
@@ -287,7 +287,7 @@ A4    <- ggplot() +
   geom_line(data = inc_MB_Defra_2010_12, aes(x = date, y = incFe, color = "red")) +
   xlab('Date') +
   ylab('incFe in ng/m3')+ 
-  scale_color_discrete("Campaign", labels = c("ClearfLo","Defra")) + theme(legend.title = element_text(color = "black", size = 16, face = "bold")) + theme(plot.title = element_text(size = 20, face = "bold")) + theme(text=element_text(size=16,  family="serif"))
+  scale_color_discrete("Campaign", labels = c("ClearfLo","Defra")) + theme(legend.title = element_text(color = "black", size = 16, face = "bold")) + theme(plot.title = element_text(size = 20, face = "bold")) + theme(text=element_text(size=16,  family="Palatino"))
 A4
 
 A5    <- ggplot() +
@@ -295,7 +295,7 @@ A5    <- ggplot() +
   geom_line(data = inc_MB_Defra_2010_12, aes(x = date, y = incZn, color = "red")) +
   xlab('Date') +
   ylab('incZn in ng/m3')+ 
-  scale_color_discrete("Campaign", labels = c("ClearfLo","Defra")) + theme(legend.title = element_text(color = "black", size = 16, face = "bold")) + theme(plot.title = element_text(size = 20, face = "bold")) + theme(text=element_text(size=16,  family="serif"))
+  scale_color_discrete("Campaign", labels = c("ClearfLo","Defra")) + theme(legend.title = element_text(color = "black", size = 16, face = "bold")) + theme(plot.title = element_text(size = 20, face = "bold")) + theme(text=element_text(size=16,  family="Palatino"))
 A5
 
 
@@ -322,7 +322,7 @@ i <- c(1:2)
 MB_required_dataset_Cu[ , i] <- apply(MB_required_dataset_Cu[ , i], 2, function(x) as.numeric(as.character(x)))
 sapply(MB_required_dataset_Cu, class)    
 
-A6 <- ggplot(stack(MB_required_dataset_Cu), aes(x= ind, y= values, fill = ind)) + labs(y = expression(paste("Brake wear tracer (Cu) in ng ", m^-3)), x = "Roadside increment") + stat_boxplot(geom="errorbar", width = 0.25) + geom_boxplot() + scale_fill_discrete(guide = guide_legend(title ="Campaign")) + theme(legend.title = element_text(color = "black", size = 16, face = "bold")) + theme(plot.title = element_text(size = 20, face = "bold")) + theme(text=element_text(size=16,  family="serif"))
+A6 <- ggplot(stack(MB_required_dataset_Cu), aes(x= ind, y= values, fill = ind)) + labs(y = expression(paste("Brake wear tracer (Cu) in ng ", m^-3)), x = "Roadside increment") + stat_boxplot(geom="errorbar", width = 0.25) + geom_boxplot() + scale_fill_discrete(guide = guide_legend(title ="Campaign")) + theme(legend.title = element_text(color = "black", size = 16, face = "bold")) + theme(plot.title = element_text(size = 20, face = "bold")) + theme(text=element_text(size=16,  family="Palatino"))
 A6 <- ggplotly(A6)
 A6
 
@@ -333,7 +333,7 @@ i <- c(1:2)
 MB_required_dataset_Fe[ , i] <- apply(MB_required_dataset_Fe[ , i], 2, function(x) as.numeric(as.character(x)))
 sapply(MB_required_dataset_Fe, class)    
 
-A7 <- ggplot(stack(MB_required_dataset_Fe), aes(x= ind, y= values, fill = ind)) + labs(y = expression(paste("Resuspension tracer (Fe) in ng ", m^-3)), x = "Roadside increment") + stat_boxplot(geom="errorbar", width = 0.25) + geom_boxplot() + scale_fill_discrete(guide = guide_legend(title ="Campaign")) + theme(legend.title = element_text(color = "black", size = 16, face = "bold")) + theme(plot.title = element_text(size = 20, face = "bold")) + theme(text=element_text(size=16,  family="serif"))
+A7 <- ggplot(stack(MB_required_dataset_Fe), aes(x= ind, y= values, fill = ind)) + labs(y = expression(paste("Resuspension tracer (Fe) in ng ", m^-3)), x = "Roadside increment") + stat_boxplot(geom="errorbar", width = 0.25) + geom_boxplot() + scale_fill_discrete(guide = guide_legend(title ="Campaign")) + theme(legend.title = element_text(color = "black", size = 16, face = "bold")) + theme(plot.title = element_text(size = 20, face = "bold")) + theme(text=element_text(size=16,  family="Palatino"))
 A7 <- ggplotly(A7)
 A7
 
@@ -344,7 +344,7 @@ i <- c(1:2)
 MB_required_dataset_Zn[ , i] <- apply(MB_required_dataset_Zn[ , i], 2, function(x) as.numeric(as.character(x)))
 sapply(MB_required_dataset_Zn, class)    
 
-A8 <- ggplot(stack(MB_required_dataset_Zn), aes(x= ind, y= values, fill = ind)) + labs(y = expression(paste("Tyre wear tracer (Zn) in ng  ", m^-3)), x = "Roadside increment") + stat_boxplot(geom="errorbar", width = 0.25) + geom_boxplot() + scale_fill_discrete(guide = guide_legend(title ="Campaign")) + theme(legend.title = element_text(color = "black", size = 16, face = "bold")) + theme(plot.title = element_text(size = 20, face = "bold")) + theme(text=element_text(size=16,  family="serif"))
+A8 <- ggplot(stack(MB_required_dataset_Zn), aes(x= ind, y= values, fill = ind)) + labs(y = expression(paste("Tyre wear tracer (Zn) in ng ", m^-3)), x = "Roadside increment") + stat_boxplot(geom="errorbar", width = 0.25) + geom_boxplot() + scale_fill_discrete(guide = guide_legend(title ="Campaign")) + theme(legend.title = element_text(color = "black", size = 16, face = "bold")) + theme(plot.title = element_text(size = 20, face = "bold")) + theme(text=element_text(size=16,  family="Palatino"))
 A8 <- ggplotly(A8)
 A8
 
@@ -373,7 +373,7 @@ b1 <- mcreg(x,y,method.reg = "Deming", mref.name = "Defra", mtest.name = "Clearf
 
 plot(b1, Legend = TRUE, main =  "Deming regression of Cu from ClearfLo over Defra", Points.pch = 19, ci.area = TRUE , identity = FALSE, Grid = FALSE, Sub ="") 
 
-MCResult.plot(b1, identity = TRUE, ci.area.col = grey(0.9), Legend = TRUE, legend.place = "bottomright", add.grid = FALSE,ci.border = TRUE, points.pch = 20, main = "Cu in ng/m3", add.cor = FALSE, family="serif", sub = "")
+MCResult.plot(b1, identity = TRUE, ci.area.col = grey(0.9), Legend = TRUE, legend.place = "bottomright", add.grid = FALSE,ci.border = TRUE, points.pch = 20, main = "Cu in ng/m3", add.cor = FALSE, family="Palatino", sub = "")
 
 
 x <- MB_required_dataset_Fe$Defra
@@ -383,7 +383,7 @@ r1 <- mcreg(x,y,method.reg = "Deming", mref.name = "Defra", mtest.name = "Clearf
 
 plot(r1, Legend = TRUE, main =  "Deming regression of Fe from ClearfLo over Defra", Points.pch = 19, ci.area = FALSE , identity = FALSE, Grid = FALSE, Sub ="") 
 
-MCResult.plot(r1, identity = TRUE, ci.area.col = grey(0.9), Legend = TRUE, legend.place = "topright", add.grid = FALSE,ci.border = TRUE, points.pch = 20, main = "Fe in ng/m3", add.cor = FALSE, family="serif", sub = "")
+MCResult.plot(r1, identity = TRUE, ci.area.col = grey(0.9), Legend = TRUE, legend.place = "topright", add.grid = FALSE,ci.border = TRUE, points.pch = 20, main = "Fe in ng/m3", add.cor = FALSE, family="Palatino", sub = "")
 
 x <- MB_required_dataset_Zn$Defra
 y <- MB_required_dataset_Zn$ClearfLo
@@ -392,7 +392,7 @@ t1 <- mcreg(x,y,method.reg = "Deming", mref.name = "Defra", mtest.name = "Clearf
 
 plot(t1, Legend = TRUE, main =  "Deming regression of Zn from ClearfLo over Defra", Points.pch = 19, ci.area = TRUE , identity = FALSE, Grid = FALSE, Sub ="") 
 
-MCResult.plot(t1, identity = TRUE, ci.area.col = grey(0.9), Legend = TRUE, legend.place = "bottomright", add.grid = FALSE,ci.border = TRUE, points.pch = 20, main = "Zn in ng/m3", add.cor = FALSE, family="serif", sub = "")
+MCResult.plot(t1, identity = TRUE, ci.area.col = grey(0.9), Legend = TRUE, legend.place = "bottomright", add.grid = FALSE,ci.border = TRUE, points.pch = 20, main = "Zn in ng/m3", add.cor = FALSE, family="Palatino", sub = "")
 
 
 ## Next section of Methodology 
@@ -420,7 +420,7 @@ TheilSen(MB_inc_2010_2019_NExhaust, pollutant = "Tyre_wear_MB", ylab = "Tyre wea
 
 MB_inc_2010_2019_NExhaust$Resuspension_MB   <- MB_inc_2010_2019_NExhaust$Resuspension_MB - MB_inc_2010_2019_NExhaust$Resuspension_WM
 MB_inc_2010_2019_NExhaust$Resuspension_MB   <- MB_inc_2010_2019_NExhaust$Resuspension_MB/1000
-TheilSen(MB_inc_2010_2019_NExhaust, pollutant = "Resuspension_MB", ylab = "Resuspension concentration in ug/m3", main = "Road dust resuspension concentration", deseason = TRUE)
+TheilSen(MB_inc_2010_2019_NExhaust, pollutant = "Resuspension_MB", ylab = "Resuspension concentration in   ug/m3", main = "Road dust resuspension concentration", deseason = TRUE)
 
 MB_inc_2010_2019_NExhaust$Non_exhaust_PM    <- MB_inc_2010_2019_NExhaust$Brake_wear_MB + MB_inc_2010_2019_NExhaust$Tyre_wear_MB + MB_inc_2010_2019_NExhaust$Resuspension_MB
 
@@ -432,7 +432,7 @@ MB_inc_2010_2019_NExhaust$date                  <- as.POSIXct(strptime(MB_inc_20
 
 MB_inc_2010_2019_NExhaust_partition             <- select(MB_inc_2010_2019_NExhaust, c(2,3,4,5))
 
-MB1 <- ggplot(stack(MB_inc_2010_2019_NExhaust), aes(x= ind, y= values, fill = ind)) + xlab("Roadside incremental values") + ylab("Brake, Tyre and Resuspension wear in ug/m3") + stat_boxplot(geom="errorbar", width = 0.25) + geom_boxplot() + scale_fill_discrete(guide = guide_legend(title ="Tracers")) + theme(legend.title = element_text(color = "black", size = 16, face = "bold")) + labs(title = 'Incremental non-exhaust components of MB') + theme(plot.title = element_text(size = 20, face = "bold")) + theme(text=element_text(size=16,  family="serif"))
+MB1 <- ggplot(stack(MB_inc_2010_2019_NExhaust), aes(x= ind, y= values, fill = ind)) + xlab("Roadside incremental values") + ylab("Brake, Tyre and Resuspension wear in ug/m3") + stat_boxplot(geom="errorbar", width = 0.25) + geom_boxplot() + scale_fill_discrete(guide = guide_legend(title ="Tracers")) + theme(legend.title = element_text(color = "black", size = 16, face = "bold")) + labs(title = 'Incremental non-exhaust components of MB') + theme(plot.title = element_text(size = 20, face = "bold")) + theme(text=element_text(size=16,  family="Palatino"))
 MB1
 
 #after removing outliers
@@ -440,7 +440,7 @@ MB1
 TheilSen(MB_inc_2010_2019_NExhaust, pollutant = "Brake_wear_MB", ylab = "Brake wear in ug/m3", main = "Brake wear concentration on MB", deseason = TRUE)
 TheilSen(MB_inc_2010_2019_NExhaust, pollutant = "Tyre_wear_MB", ylab = "Tyre wear in ug/m3", main = "Tyre wear concentration on MB", deseason = TRUE)
 TheilSen(MB_inc_2010_2019_NExhaust, pollutant = "Resuspension_MB", ylab = "Resuspension concentration in ug/m3", main = "Resuspension dust concentration on MB", deseason = TRUE)
-TheilSen(MB_inc_2010_2019_NExhaust, pollutant = "Non_exhaust_PM", ylab = "Non-exhaust PM in ug/m3", main = "Non-exhaust PM on MB", deseason = TRUE)
+TheilSen(MB_inc_2010_2019_NExhaust, pollutant = "Non_exhaust_PM", ylab = "Non-exhaust PM in ?g/m3", main = "Non-exhaust PM on MB", deseason = TRUE)
 
 ##first finish swansea TheilSen estimators##
 
@@ -483,22 +483,22 @@ colnames(SwanMary_Zn_partition) <- c("Marylebone", "Swansea")
 SwanMary_NE_partition <- SwanMary_NE[,c(2,3)]
 colnames(SwanMary_NE_partition) <- c("Marylebone", "Swansea")
 
-MS1 <- ggplot(stack(SwanMary_Cu_partition), aes(x= ind, y= values, fill = ind)) + labs(y = expression(paste("Brake wear concentration in ug ", m^-3)), x = "Roadside increment") + stat_boxplot(geom="errorbar", width = 0.25) + geom_boxplot() + scale_fill_discrete(guide = guide_legend(title ="Monitoring site")) + theme(legend.title = element_text(color = "black", size = 16, face = "bold")) + theme(plot.title = element_text(size = 20, face = "bold")) + theme(text=element_text(size=16,  family="serif"))
+MS1 <- ggplot(stack(SwanMary_Cu_partition), aes(x= ind, y= values, fill = ind)) + labs(y = expression(paste("Brake wear in ?g ", m^-3)), x = "Roadside increment") + stat_boxplot(geom="errorbar", width = 0.25) + geom_boxplot() + scale_fill_discrete(guide = guide_legend(title ="Monitoring site")) + theme(legend.title = element_text(color = "black", size = 16, face = "bold")) + theme(plot.title = element_text(size = 20, face = "bold")) + theme(text=element_text(size=16,  family="Palatino"))
 MS1 <- ggplotly(MS1)
 MS1
 
 
-MS2 <- ggplot(stack(SwanMary_Fe_partition), aes(x= ind, y= values, fill = ind)) + labs(y = expression(paste("Resuspended dust concentration in ug ", m^-3)), x = "Roadside increment") + stat_boxplot(geom="errorbar", width = 0.25) + geom_boxplot() + scale_fill_discrete(guide = guide_legend(title ="Monitoring site")) + theme(legend.title = element_text(color = "black", size = 16, face = "bold")) + theme(plot.title = element_text(size = 20, face = "bold")) + theme(text=element_text(size=16,  family="serif"))
+MS2 <- ggplot(stack(SwanMary_Fe_partition), aes(x= ind, y= values, fill = ind)) + labs(y = expression(paste("Resuspended dust in ?g  ", m^-3)), x = "Roadside increment") + stat_boxplot(geom="errorbar", width = 0.25) + geom_boxplot() + scale_fill_discrete(guide = guide_legend(title ="Monitoring site")) + theme(legend.title = element_text(color = "black", size = 16, face = "bold")) + theme(plot.title = element_text(size = 20, face = "bold")) + theme(text=element_text(size=16,  family="Palatino"))
 MS2 <- ggplotly(MS2)
 MS2
 
 
-MS3 <- ggplot(stack(SwanMary_Zn_partition), aes(x= ind, y= values, fill = ind)) + labs(y = expression(paste("Tyre wear concentration in ug ", m^-3)), x = "Roadside increment") + stat_boxplot(geom="errorbar", width = 0.25) + geom_boxplot() + scale_fill_discrete(guide = guide_legend(title ="Monitoring site")) + theme(legend.title = element_text(color = "black", size = 16, face = "bold")) + theme(plot.title = element_text(size = 20, face = "bold")) + theme(text=element_text(size=16,  family="serif"))
+MS3 <- ggplot(stack(SwanMary_Zn_partition), aes(x= ind, y= values, fill = ind)) + labs(y = expression(paste("Tyre wear in ?g ", m^-3)), x = "Roadside increment") + stat_boxplot(geom="errorbar", width = 0.25) + geom_boxplot() + scale_fill_discrete(guide = guide_legend(title ="Monitoring site")) + theme(legend.title = element_text(color = "black", size = 16, face = "bold")) + theme(plot.title = element_text(size = 20, face = "bold")) + theme(text=element_text(size=16,  family="Palatino"))
 MS3 <- ggplotly(MS3)
 MS3
 
 
-MS4 <- ggplot(stack(SwanMary_NE_partition), aes(x= ind, y= values, fill = ind)) + labs(y = expression(paste("Non-exhaust PM concentration in ug ", m^-3)), x = "Roadside increment") + stat_boxplot(geom="errorbar", width = 0.25) + geom_boxplot() + scale_fill_discrete(guide = guide_legend(title ="Monitoring site")) + theme(legend.title = element_text(color = "black", size = 16, face = "bold")) + theme(plot.title = element_text(size = 20, face = "bold")) + theme(text=element_text(size=16,  family="serif"))
+MS4 <- ggplot(stack(SwanMary_NE_partition), aes(x= ind, y= values, fill = ind)) + labs(y = expression(paste("Non-exhaust PM in ?g  ", m^-3)), x = "Roadside increment") + stat_boxplot(geom="errorbar", width = 0.25) + geom_boxplot() + scale_fill_discrete(guide = guide_legend(title ="Monitoring site")) + theme(legend.title = element_text(color = "black", size = 16, face = "bold")) + theme(plot.title = element_text(size = 20, face = "bold")) + theme(text=element_text(size=16,  family="Palatino"))
 MS4 <- ggplotly(MS4)
 MS4
 
@@ -543,7 +543,7 @@ MB_inc_NE_Pollution_set$date            <- as.POSIXct(strptime(MB_inc_NE_Polluti
 
 TheilSen(MB_inc_NE_Pollution_set, pollutant = "NEofPM", ylab = "% points", main = "Percentage of non-exhaust in PM10", deseason = TRUE)
 smoothTrend(MB_inc_NE_Pollution_set, pollutant = "NEofPM", ylab = "% points", main = "Smooth Trend for percentage of non-exhaust in PM10", deseason = TRUE)
-TheilSen(MB_inc_NE_Pollution_set, pollutant = "inc_PM10", ylab = "PM10 in ??g/m3", main = "Roadside increment of PM10", deseason = TRUE)
+TheilSen(MB_inc_NE_Pollution_set, pollutant = "inc_PM10", ylab = "PM10 in ?g/m3", main = "Roadside increment of PM10", deseason = TRUE)
 
 ##Cardiff a bad background for Swansea - located far away and 80% of time - Cardiff greater than Swansea - PM10##
 
